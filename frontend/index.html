@@ -1,0 +1,117 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Weather Whiplash | Track Intelligence</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <header class="top"><a class="brand"><b>WW</b><span><strong>WEATHER WHIPLASH</strong><small>TRACK CONDITION
+                    INTELLIGENCE</small></span></a>
+        <div class="live"><i></i> LIVE ANALYSIS</div>
+    </header>
+    <main>
+        <section class="hero">
+            <div>
+                <p class="eyebrow">AI RACE MONTH • HUGGING FACE</p>
+                <h1>Know the track.<br><em>Before it changes.</em></h1>
+                <p>Upload a track image or video to detect dry, damp, wet or drying conditions, track the trend, and
+                    generate a tire-change alert.</p>
+            </div>
+            <div class="badge"><b>4</b><span>TRACK<br>STATES</span></div>
+        </section>
+        <section class="card upload">
+            <div class="head">
+                <div>
+                    <p class="eyebrow">01 / INPUT</p>
+                    <h2>Track feed</h2>
+                </div><span class="pill">JPG • PNG • MP4</span>
+            </div>
+            <div id="drop" class="drop"><input id="file" type="file" accept="image/*,video/*" hidden>
+                <div class="up">↥</div>
+                <h3>Drop track image or video here</h3>
+                <p>or choose a file from your device</p><button id="choose" class="btn red">Choose
+                    file</button><small>Demo mode works without the AI backend.</small>
+            </div>
+            <div id="preview" class="preview hidden">
+                <div id="media"></div>
+                <div class="filebar"><b id="filename"></b><button id="remove" class="btn ghost">Remove</button></div>
+            </div>
+            <div class="analyze"><span><i id="stateDot"></i><span id="state">Ready for analysis</span></span><button
+                    id="analyze" class="btn red big">Analyze track →</button></div>
+        </section>
+        <section class="grid">
+            <article class="card result">
+                <div class="head">
+                    <div>
+                        <p class="eyebrow">02 / AI RESULT</p>
+                        <h2>Current condition</h2>
+                    </div><span id="confPill" class="pill green">91% CONF.</span>
+                </div>
+                <div class="condition">
+                    <div id="icon" class="icon">🌧</div>
+                    <div><strong id="condition">WET</strong>
+                        <p id="sub">Track surface is likely wet</p>
+                    </div>
+                </div>
+                <div class="bar"><i id="bar"></i></div>
+                <div class="stats">
+                    <div><small>MODEL CONFIDENCE</small><b id="confidence">91%</b></div>
+                    <div><small>FRAMES ANALYZED</small><b id="frames">12</b></div>
+                </div>
+            </article>
+            <article class="card result">
+                <div class="head">
+                    <div>
+                        <p class="eyebrow">03 / TREND</p>
+                        <h2>Track evolution</h2>
+                    </div><span id="trendPill" class="pill warn">↘ WORSENING</span>
+                </div>
+                <div class="trendtop">
+                    <div><small>CONDITION TREND</small><b id="trend">Getting worse</b></div><strong
+                        id="arrow">↘</strong>
+                </div>
+                <div class="chart"><svg id="chart" viewBox="0 0 700 230" preserveAspectRatio="none"></svg></div>
+                <div class="legend"><span><i class="dry"></i>Dry</span><span><i class="damp"></i>Damp</span><span><i
+                            class="wet"></i>Wet</span></div>
+            </article>
+        </section>
+        <section class="card timeline">
+            <div class="head">
+                <div>
+                    <p class="eyebrow">04 / FRAME ANALYSIS</p>
+                    <h2>Condition timeline</h2>
+                </div><span id="count" class="pill">12 frames</span>
+            </div>
+            <div id="timeline" class="frames"></div>
+        </section>
+        <section class="card recommendation">
+            <div id="recIcon" class="recicon">⚠</div>
+            <div>
+                <p class="eyebrow">05 / RACE DECISION</p>
+                <h2 id="recTitle">Consider tire change soon</h2>
+                <p id="recText">Track conditions are trending wetter. The visual model indicates a meaningful shift
+                    toward wet conditions.</p>
+            </div><span id="recTag" class="pill warn">CAUTION</span>
+        </section>
+        <section class="how">
+            <div>
+                <p class="eyebrow">HOW IT WORKS</p>
+                <h2>From frame to decision.</h2>
+            </div>
+            <div class="pipeline">
+                <div><b>01</b><strong>Track feed</strong><small>Image / video frames</small></div><i></i>
+                <div><b>02</b><strong>Hugging Face</strong><small>Image classification</small></div><i></i>
+                <div><b>03</b><strong>Trend engine</strong><small>Condition over time</small></div><i></i>
+                <div><b>04</b><strong>Race alert</strong><small>Tire decision support</small></div>
+            </div>
+        </section>
+    </main>
+    <footer><span>WEATHER WHIPLASH</span><span>AI RACE MONTH • TEAM PROJECT</span></footer>
+    <script src="js/script.js"></script>
+</body>
+
+</html>
